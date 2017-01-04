@@ -1,0 +1,196 @@
+body {
+  font-family: "proxima-nova",sans-serif;
+  padding-bottom: 5em; }
+
+.border {
+  height: 6px;
+  border: 0;
+  background-color: red;
+  background-image: linear-gradient(to right, #fd7576, #fd7576 25%, #fec85d 25%, #fec85d 50%, #4db8de 50%, #4db8de 75%, #a378fc 75%, #a378fc 100%, #a378fc 100%);
+  -webkit-background-size: 50% 100%;
+  -moz-background-size: 50% 100%;
+  background-size: 50% 100%; }
+
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table; }
+
+.clearfix:after {
+  clear: both; }
+
+.wrapper {
+  width: 750px;
+  max-width: 90%;
+  margin: 0 auto; }
+
+.main_header {
+  margin: 5em 0 3em 0; }
+
+.logo img {
+  width: 100px;
+  float: left; }
+.logo h1 {
+  float: left;
+  margin: 0 0 0 1em;
+  text-transform: uppercase;
+  font-size: 1.35em;
+  padding-top: 1.1em;
+  color: #34324b; }
+  .logo h1 span {
+    font-weight: 400; }
+
+.nav {
+  float: right;
+  padding-top: 1.75em; }
+  .nav a {
+    color: #74718f;
+    margin-left: 1em;
+    text-decoration: none; }
+
+#timeline {
+  width: 100%;
+  position: relative;
+  list-style: none;
+  padding: 0; }
+  #timeline a {
+    text-decoration: none; }
+  #timeline:after {
+    content: "";
+    width: 1px;
+    background: 1px #e6e7e9;
+    height: 90%;
+    position: absolute;
+    top: 5em;
+    left: 3em;
+    z-index: 0; }
+  #timeline .listing {
+    background: #FFF;
+    border: 1px solid #e6e7e9;
+    border-radius: .3rem;
+    padding: 1em;
+    margin-bottom: 1em;
+    position: relative;
+    z-index: 1;
+    display: table;
+    width: 96%;
+    transition: all .3s ease-in-out; }
+    #timeline .listing img, #timeline .listing .info, #timeline .listing .job_type {
+      display: table-cell;
+      vertical-align: middle;
+      font-size: .9em;
+      color: #74718f; }
+    #timeline .listing .image_wrapper {
+      width: 60px; }
+      #timeline .listing .image_wrapper img {
+        width: 60px;
+        display: block;
+        margin: 0 auto;
+        border-radius: .25em; }
+    #timeline .listing .info {
+      line-height: 1.25;
+      width: 640px;
+      padding-left: 25px; }
+      #timeline .listing .info .job_title {
+        font-weight: 700;
+        color: #34324b;
+        font-size: 1.5em; }
+      #timeline .listing .info .job_info {
+        color: #74718f;
+        font-size: .9em;
+        display: block; }
+        #timeline .listing .info .job_info span {
+          margin: 0 .75em; }
+    #timeline .listing .job_type {
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: .75em;
+      position: relative;
+      white-space: nowrap;
+      padding-top: 0.6em;
+      width: 100px; }
+      #timeline .listing .job_type:before {
+        content: " ";
+        background: #a378fc;
+        width: 10px;
+        height: 10px;
+        border-radius: 100%;
+        position: absolute;
+        left: -20px;
+        top: 28px; }
+    #timeline .listing .avanzado {
+      color: #fd7576; }
+      #timeline .listing .avanzado:before {
+        background: #fd7576; }
+    #timeline .listing .basico {
+      color: #fec85d; }
+      #timeline .listing .basico:before {
+        background: #fec85d; }
+    #timeline .listing .intermedio {
+      color: #4db8de; }
+      #timeline .listing .intermedio:before {
+        background: #4db8de; }
+    #timeline .listing .contract {
+      color: #a378fc; }
+      #timeline .listing .contract:before {
+        background: #a378fc; }
+    #timeline .listing:hover {
+      cursor: pointer;
+      box-shadow: 0px 2px 40px 0px rgba(0, 0, 0, 0.1); }
+  #timeline .date {
+    display: inline-block;
+    padding: 0.6rem 0;
+    width: 100px;
+    background: #FFF;
+    border: 1px solid #E9E9E9;
+    border-radius: 3rem;
+    font-weight: 700;
+    font-size: 0.65rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    z-index: 2;
+    position: relative;
+    margin: 1em 0 2em 0; }
+
+.load_more {
+  text-align: center; }
+  .load_more .button {
+    border: 2px solid #a378fc;
+    outline: none;
+    padding: 1em 3.5em;
+    text-align: center;
+    background: transparent;
+    border-radius: 2em;
+    color: #a378fc; }
+
+@media only screen and (max-width: 700px) {
+  .main_header {
+    margin-top: 3em; }
+
+  .logo {
+    display: block;
+    margin: 0 auto;
+    text-align: center; }
+    .logo img {
+      float: none; }
+    .logo h1 {
+      float: none;
+      margin: 0;
+      font-size: 1.1em; }
+
+  .nav {
+    float: none;
+    text-align: center; }
+    .nav a {
+      margin: 0 .5em; } }
+@media only screen and (max-width: 600px) {
+  #timeline .listing .image_wrapper {
+    margin-right: 1em; }
+    #timeline .listing .image_wrapper img {
+      width: 50px; }
+  #timeline .listing .info {
+    width: 100%;
+    padding: .4em 0 0 0; }
+    #timeline .listing .info .job_title {
+      font-size: 1.25em; }
+  #timeline .listing .job_type {
+    display: none; } }
