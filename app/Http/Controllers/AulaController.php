@@ -6,11 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Category;
-use App\Item;
-use DB;
+use App\Aula;
 
-class ItemController extends Controller
+class AulaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,7 +17,8 @@ class ItemController extends Controller
      */
     public function index()
     {
-        
+        $aulas = Aula::all();
+        return view('aulas.aula')->with('aulas', $aulas);
     }
 
     /**
@@ -51,11 +50,7 @@ class ItemController extends Controller
      */
     public function show($id)
     {
-        $category = Category::find($id);
-        $items = DB::table('items')->where('category_id',"=", $id)->orderBy('level_id', 'asc')->get();
-        return view('items.item')->with('items', $items)
-                                 ->with('category', $category);
-        
+        //
     }
 
     /**

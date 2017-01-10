@@ -16,7 +16,5 @@ Route::get('/', function () {
 });
 Route::resource('categories', 'CategoryController');
 Route::resource('items', 'ItemController');
-
-/*Route::get('items', function () {
-    return view('items.category');       
-});*/
+Route::resource('learning', 'AulaController');
+Route::resource('plus-code', 'PluscodeController');

@@ -30,20 +30,32 @@
     </header>
 
     <ul id="timeline">
-        @foreach($categories as $category)
-          <a href="{{ route('items.show', $category->id) }}">
+        @foreach($aulas as $aula)
+          <a href="{{ $aula->link }}">
             <li class="listing clearfix">
               <div class="image_wrapper">
-                <img src="images/{{ $category-> photo }}.png" alt="UX Designer">
+                <img src="images/{{ $aula-> photo }}.png" alt="{{ $aula-> photo }}">
               </div>
               <div class="info">
-                <span class="job_title">{{ $category->name }}</span>
-                <span class="job_info">{{ $category->description1 }} <span>&bull;</span> {{ $category->description2}} <span>&bull;</span> {{ $category->description3 }}</span>
+                <span class="job_title">{{ $aula->name }}</span>
+                <span class="job_info">{{ $aula->description1 }} <span>&bull;</span> {{ $aula->description2}} <span>&bull;</span> {{ $aula->description3 }}</span>
               </div>
             </li>
           </a>
         @endforeach
     </ul>
+     @if(count($aulas) == 0)
+        <ul id="timeline">
+          <li class="listing clearfix">
+            <div class="image_wrapper">
+              <img src="{{ asset('images/dribbble.jpg') }}" alt="No se encontro registros">
+            </div>
+            <div class="info">
+              <span class="job_title">Se está actualizando el contenido!</span>
+            </div>
+          </li>
+        </ul>  
+      @endif
   </div>
 </body>
 </html>

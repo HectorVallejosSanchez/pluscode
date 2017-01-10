@@ -19,26 +19,26 @@
     <header class="main_header clearfix">
       <div class="logo">
         <img src="{{ asset("images/logo.png") }}" alt="Plus-Code">
-        <a target="_blank" href="{{ route('categories.index') }}"><h1>Plus<span>Code</span></h1></a>
+        <a href="/"><h1>Plus<span>Code</span></h1></a>
       </div>
       <nav class="nav">
         <a href="{{ route('categories.index') }}">Categorias</a>
-        <a href="#">Plus-Code</a>
-        <a href="#">Non-Tech</a>
+        <a href="{{ route('plus-code.index') }}">Plus-Code</a>
+        <a href="{{ route('learning.index') }}">Aula Virtual</a>
         <a href="https://github.com/HectorVallejosSanchez">Contacto</a>
       </nav>
     </header>
 
     <ul id="timeline">
       @foreach($items as $item)
-      <a target="_blank" href="{{ $item->link }}">
+      <a href="{{ $item->link }}">
         <li class="listing clearfix">
           <div class="image_wrapper">
             <img src="/images/{{ $category-> photo }}.png" alt="Category">
           </div>
           <div class="info">
             <span class="job_title">{{ $item->name }}</span>
-            <span class="job_info">UX Designer <span>&bull;</span> Desarrollo Web <span>&bull;</span> Front-End</span>
+            <span class="job_info">{{ $category->description1 }} <span>&bull;</span> {{ $category->description2 }} <span>&bull;</span> {{ $category->description3 }} </span>
           </div>
           @if ( $item->level_id  == 1) 
           <span class="job_type basico">BÁSICO</span>
